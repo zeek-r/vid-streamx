@@ -1,0 +1,24 @@
+{
+  "name": "vidx-server",
+  "version": "1.0.0",
+  "description": "A node video server",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zeek-r/vid-streamx.git"
+  },
+  "author": "Roshan Bista",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeek-r/vid-streamx/issues"
+  },
+  "homepage": "https://github.com/zeek-r/vid-streamx#readme",
+  "dependencies": {
+    "aws-sdk": "^2.648.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
