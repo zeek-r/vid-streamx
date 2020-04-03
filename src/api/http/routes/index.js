@@ -11,7 +11,7 @@ function init(router, handlers) {
       res.status(405).send({ message: "Not allowed" });
     });
 
-  router.route("/stream/*").get(handlers.videoHandlers.getStream);
+  router.route("/stream/*").get(handlers.authHandlers.authenticate, handlers.videoHandlers.getStream);
 
   // 404 handlers, handle 405 in individual route like above
   router.route("*").all((req, res, next) => {
