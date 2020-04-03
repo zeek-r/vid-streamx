@@ -1,20 +1,22 @@
 const infrastructure = require("../infrastructure/index");
 const video = require("./video");
+const auth = require("./auth");
 const AWS = require("aws-sdk");
 
 function init(config = {}) {
   console.log("starting adapters");
 
   AWS.config.update({
-    accessKeyId: "AWS_ACCESS_KEY_ID_REDACTED",
-    secretAccessKey: "AWS_SECRET_ACCESS_KEY_REDACTED",
-    region: "us-east-1"
+    accessKeyId: config.awsAccessKey,
+    secretAccessKey: config.awsSecretKey,
+    region: config.awsRegion
   });
   const infra = infrastructure.init({ aws: AWS });
 
+  const authService = auth.init({ infra: infra.redisInfra });
   const videoService = video.init({ infra: infra.videoInfra });
 
-  return { videoService };
+  return { videoService, authService };
 }
 
 module.exports = { init };
