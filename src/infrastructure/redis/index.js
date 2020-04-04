@@ -7,7 +7,7 @@ let retryCounter = 0;
 const getObject = async (key) => {
   // return { "token": "test-token", userID: key }
   return new Promise((resolve, reject) => {
-    conn.hmgetall(key, (err, value) => {
+    conn.get(key, (err, value) => {
       if (err) {
         return reject(err)
       }

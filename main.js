@@ -3,7 +3,7 @@ const services = require("./src/services");
 const config = require("./src/commons/config");
 
 const main = () => {
-  const app = services.init();
+  const app = services.init(config);
   const { server } = http.init(app);
 
   server.listen(config.apiPort, () => {
