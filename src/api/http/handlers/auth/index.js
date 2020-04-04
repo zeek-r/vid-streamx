@@ -2,7 +2,7 @@ let authService = null;
 
 async function authenticate(req, res, next) {
   try {
-    const userID = req["headers"]["X-STREAM-TOKEN"];
+    const userID = req["headers"]["x-stream-token"];
     const authenticated = await authService.authenticate(userID);
 
     if (authenticated) {
