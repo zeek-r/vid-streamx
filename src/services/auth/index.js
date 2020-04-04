@@ -5,7 +5,7 @@ async function authenticate (userID) {
     if(!userID) {
       return false;
     }
-    const user = await redisInfra.getObject(userID);
+    const user = await redisInfra.getObject(`token:${userID}`);
     return user;
   } catch (error) {
     console.error(error)

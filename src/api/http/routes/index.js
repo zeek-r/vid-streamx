@@ -4,7 +4,6 @@ function init(router, handlers) {
   router
     .route("/")
     .get((req, res, next) => {
-      console.log(req);
       res.json({ hello: "world" });
     })
     .all((req, res) => {

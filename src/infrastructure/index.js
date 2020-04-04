@@ -1,6 +1,5 @@
 const video = require("./video");
 const redis = require("./redis");
-const config = require("config");
 
 function init({ aws = {} }) {
   const s3 = new aws.S3();
